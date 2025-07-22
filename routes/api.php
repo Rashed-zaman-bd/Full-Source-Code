@@ -8,7 +8,6 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
 
-
 // get all users
 Route::get('/users', [UsersController::class, 'getUsers'])->name('getUsers');
 //get single user
