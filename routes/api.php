@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BookingsController;
 use App\Http\Controllers\EventsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -31,4 +32,9 @@ Route::post('/create-event', [EventsController::class, 'createEvent'])->name('cr
 Route::put('/update-event/{id}', [EventsController::class, 'updateEvent'])->name('updateEvent');
 // delete event
 Route::delete('/delete-event/{id}', [EventsController::class, 'deleteEvent'])->name('deleteEvent');
+
+// get all bookings
+Route::get('/all-bookings', [BookingsController::class, 'allBookings'])->name('allBookings');
+// get booking
+Route::get('/booking/{id}', [BookingsController::class, 'getBooking'])->name('getBooking');
 
