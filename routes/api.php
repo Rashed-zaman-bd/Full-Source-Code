@@ -37,4 +37,9 @@ Route::delete('/delete-event/{id}', [EventsController::class, 'deleteEvent'])->n
 Route::get('/all-bookings', [BookingsController::class, 'allBookings'])->name('allBookings');
 // get booking
 Route::get('/booking/{id}', [BookingsController::class, 'getBooking'])->name('getBooking');
-
+// create booking
+Route::post('/create-booking', [BookingsController::class, 'createBooking'])->name('createBooking');
+// update booking
+Route::put('/update-booking/{id}', [BookingsController::class, 'updateBooking'])->name('updateBooking');
+// delete booking
+Route::delete('/delete-booking/{id}', [BookingsController::class, 'deleteBooking'])->name('deleteBooking');
