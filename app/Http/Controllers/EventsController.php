@@ -22,7 +22,7 @@ class EventsController extends Controller
 
         return response()->json([
             'status' => true,
-            'message' => 'Events retrieved successfully',
+            'message' => 'Events fetched successfully',
             'data' => $events,
         ], 200);
     }
