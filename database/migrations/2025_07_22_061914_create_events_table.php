@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('events', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->decimal('ticket_price');
             $table->text('description');
             $table->dateTime('start_time');
             $table->dateTime('end_time');
@@ -28,4 +29,5 @@ return new class extends Migration
     {
         Schema::dropIfExists('events');
     }
+
 };
