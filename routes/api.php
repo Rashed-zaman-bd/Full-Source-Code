@@ -14,6 +14,8 @@ Route::get('/user', function (Request $request) {
 
 //member registration
 Route::post('/registration', [AuthController::class, 'userRegistration'])->name('userRegistration');
+Route::post('/login', [AuthController::class, 'login'])->name('login');
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout')->middleware('auth:sanctum');
 
 
 
