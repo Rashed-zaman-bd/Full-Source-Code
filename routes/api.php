@@ -1,15 +1,23 @@
 <?php
 
-use App\Http\Controllers\BookingsController;
-use App\Http\Controllers\EventsController;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UsersController;
 use PHPUnit\Event\EventCollection;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\UsersController;
+use App\Http\Controllers\EventsController;
+use App\Http\Controllers\BookingsController;
 
 Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
+
+//member registration
+Route::post('/registration', [AuthController::class, 'userRegistration'])->name('userRegistration');
+
+
+
+
 
 // get all users
 Route::get('/users', [UsersController::class, 'getUsers'])->name('getUsers');
