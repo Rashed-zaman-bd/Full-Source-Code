@@ -6,9 +6,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
+use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Foundation\Auth\User as Authenticable;
 
-class User extends Model
+class User extends Authenticable
 {
+    use HasApiTokens, Notifiable, HasFactory;
     protected $fillable = ['role','name','email','profile_image','password'];
 
     public function bookings()
